@@ -1,24 +1,24 @@
 import axios from 'axios';
 
 
-const API = "http://localhost:8080//api/posts";
+const API = "http://localhost:8080/api/posts";
 
 export const getAllPosts=()=>{
-    axios.get(API);
+   return axios.get(API);
 }
 
 export const getSinglePost=(id)=>{
-    axios.get(`${API}/${id}`);
+   return axios.get(`${API}/${id}`);
 }
 
 export const createPost=(Data)=>{
-    axios.post(`${API}/${createPost}`,Data);
+   return axios.post(API,Data);
 }
 
 export const deletePost=(id)=>{
-    axios.delete(`${API}/${deletePost}/${id}`)
+   return axios.delete(`${API}/${id}`)
 }
 
 export const updatePost=(Data,id)=>{
-    axios.put(`${API}/${update}/${id}`,Data);
+   return axios.put(`${API}/${id}`,Data);
 }

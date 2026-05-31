@@ -37,6 +37,12 @@ const PostList = () => {
     loadPosts();
   },[]);
 
+  if(loading) {
+    return <p>Loading Posts....</p>
+  }
+  if(error){
+    return <p>{error}</p>
+  }
 
   return (
     <div>
