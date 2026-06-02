@@ -1,0 +1,286 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #eef2ff 0%,
+    #f8fafc 50%,
+    #f3e8ff 100%
+  );
+}
+
+/* ===========================
+   PAGE
+=========================== */
+
+.create-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ===========================
+   MAIN EDITOR CARD
+=========================== */
+
+.editor-container {
+  width: 100%;
+  max-width: 950px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 24px;
+
+  padding: 45px;
+
+  position: relative;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08);
+
+  animation: fadeIn 0.4s ease;
+}
+
+/* Top Accent Border */
+
+.editor-container::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  border-radius: 24px 24px 0 0;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.editor-header {
+  margin-bottom: 40px;
+}
+
+.editor-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+
+  color: #111827;
+
+  margin-bottom: 10px;
+}
+
+.editor-header p {
+  color: #6b7280;
+  font-size: 1.05rem;
+}
+
+/* ===========================
+   FORM GROUPS
+=========================== */
+
+.input-group {
+  margin-bottom: 28px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-weight: 600;
+
+  color: #374151;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.input-group input {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* ===========================
+   TEXTAREA
+=========================== */
+
+.input-group textarea {
+  width: 100%;
+
+  min-height: 320px;
+
+  padding: 20px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 16px;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  resize: vertical;
+
+  transition: all 0.3s ease;
+}
+
+.input-group textarea:focus {
+  outline: none;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 15px;
+}
+
+.publish-btn {
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color: white;
+
+  padding: 14px 28px;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.publish-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(37, 99, 235, 0.25);
+}
+
+.publish-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   ERROR BOX
+=========================== */
+
+.error-box {
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  border: 1px solid #fecaca;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  margin-bottom: 20px;
+
+  font-weight: 500;
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+  .editor-container {
+    padding: 25px;
+  }
+
+  .editor-header h1 {
+    font-size: 2rem;
+  }
+
+  .input-group textarea {
+    min-height: 220px;
+  }
+
+  .publish-btn {
+    width: 100%;
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+}
