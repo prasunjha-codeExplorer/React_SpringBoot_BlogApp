@@ -4,26 +4,33 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <nav className="navbar">
-        <h1 className="logo">BlogSphere</h1>
+    <div className="home">
+      <header className="hero">
+        <div className="hero-content">
+          <h1>Welcome to BlogSphere</h1>
 
-        <Link to="/create" className="create-btn">
-          + New Post
-        </Link>
-      </nav>
+          <p>
+            Discover articles about Software Engineering,
+            Spring Boot, React, System Design, and more.
+          </p>
 
-      <section className="hero">
-        <h1>Discover Amazing Stories</h1>
+          <Link
+            to="/create"
+            className="create-post-btn"
+          >
+            Start Writing
+          </Link>
+        </div>
+      </header>
 
-        <p>
-          A place where developers and writers share
-          knowledge, experiences, and ideas.
-        </p>
-      </section>
+      <section className="posts-wrapper">
+        <div className="posts-container">
+          <h2 className="section-title">
+            Latest Articles
+          </h2>
 
-      <section className="posts-section">
-        <PostList />
+          <PostList />
+        </div>
       </section>
     </div>
   );

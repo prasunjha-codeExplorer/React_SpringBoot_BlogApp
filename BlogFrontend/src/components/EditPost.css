@@ -1,102 +1,266 @@
-.edit-post-container {
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.edit-page {
   min-height: 100vh;
-  background: #f4f6f9;
+
+  padding: 50px 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+
+  background:
+    linear-gradient(
+      rgba(15,23,42,.78),
+      rgba(15,23,42,.78)
+    ),
+    url("https://images.unsplash.com/photo-1455390582262-044cdead277a");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.edit-post-form {
+/* =========================
+   EDITOR CARD
+========================= */
+
+.edit-container {
   width: 100%;
-  max-width: 700px;
-  background: white;
-  padding: 35px;
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  max-width: 950px;
+
+  background: rgba(255,255,255,.96);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+
+  padding: 45px;
+
+  position: relative;
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,.18);
+
+  animation: fadeIn .4s ease;
 }
 
-.edit-post-form h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #1f2937;
+/* Top Accent */
+
+.edit-container::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #f59e0b,
+    #f97316,
+    #ec4899
+  );
+
+  border-radius: 24px 24px 0 0;
 }
+
+/* =========================
+   HEADER
+========================= */
+
+.editor-header {
+  margin-bottom: 35px;
+}
+
+.editor-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+
+  color: #111827;
+
+  margin-bottom: 10px;
+}
+
+.editor-header p {
+  color: #6b7280;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   FORM
+========================= */
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
+
+  margin-bottom: 10px;
+
   color: #374151;
+
+  font-weight: 600;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  font-size: 15px;
-  transition: 0.3s;
+
+  padding: 16px;
+
+  border: 2px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  font-size: 1rem;
+
+  transition: all .3s ease;
+}
+
+.form-group textarea {
+  min-height: 280px;
+  resize: vertical;
+  line-height: 1.8;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 8px rgba(37,99,235,0.2);
+
+  border-color: #f97316;
+
+  box-shadow:
+    0 0 0 5px rgba(249,115,22,.15);
 }
+
+/* =========================
+   BUTTONS
+========================= */
 
 .button-group {
   display: flex;
-  gap: 12px;
-  margin-top: 25px;
+  gap: 15px;
+
+  margin-top: 30px;
 }
 
 .update-btn {
   flex: 1;
-  background: #2563eb;
-  color: white;
+
   border: none;
-  padding: 14px;
-  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #f59e0b,
+    #f97316
+  );
+
+  color: white;
+
+  padding: 15px;
+
+  border-radius: 14px;
+
+  font-weight: 700;
+
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+
+  transition: .3s;
 }
 
 .update-btn:hover {
-  background: #1d4ed8;
-}
+  transform: translateY(-3px);
 
-.update-btn:disabled {
-  background: #93c5fd;
-  cursor: not-allowed;
+  box-shadow:
+    0 12px 25px rgba(249,115,22,.30);
 }
 
 .cancel-btn {
   flex: 1;
-  background: #e5e7eb;
-  color: #111827;
+
   border: none;
-  padding: 14px;
-  border-radius: 10px;
+
+  background: #e5e7eb;
+
+  color: #111827;
+
+  padding: 15px;
+
+  border-radius: 14px;
+
+  font-weight: 700;
+
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+
+  transition: .3s;
 }
 
 .cancel-btn:hover {
   background: #d1d5db;
 }
 
+/* =========================
+   ERROR
+========================= */
+
 .error-message {
   background: #fee2e2;
+
   color: #dc2626;
-  padding: 12px;
-  border-radius: 8px;
+
+  border: 1px solid #fecaca;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
   margin-bottom: 20px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .edit-container {
+    padding: 25px;
+  }
+
+  .editor-header h1 {
+    font-size: 2rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
 }
