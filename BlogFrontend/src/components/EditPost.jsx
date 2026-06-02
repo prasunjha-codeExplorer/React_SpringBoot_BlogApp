@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getAllPosts, getSinglePost, updatePost } from '../services/api';
 import "./EditPost.css";
+import { toast } from "react-toastify";
 
 const EditPost = () => {
   const { id } = useParams();
@@ -33,6 +34,7 @@ const EditPost = () => {
     try {
       setSubmitting(true);
       await updatePost(posts,id);
+      toast.success("Post updated successfully");
       navigate("/");
     } catch {
       setError("Failed to update Post");
