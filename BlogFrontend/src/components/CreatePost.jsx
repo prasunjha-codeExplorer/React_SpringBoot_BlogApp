@@ -36,7 +36,7 @@ const CreatePost = () => {
 
   //Handle form
    const handleChange = (e) => {
-       setPosts({...posts,[e.target.name]:e.target.value});
+      setPosts({...posts,[e.target.name]:e.target.value});
    }
 
    return (
